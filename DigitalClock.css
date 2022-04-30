@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500');
+
+:root {
+  --background: #2ecc71;
+  --containerDark: #010101;
+  --textColor: #f4f4f4;
+  --labelColor: #cccccc;
+  --shadow: #030303;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  line-height: 1rem;
+  letter-spacing: .08rem;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: inherit;
+  background-color: var(--background);
+  height: 100vh;
+  width: 100vw;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 20rem;
+  width: 60rem;
+  background-color: var(--containerDark);
+  border-radius: 3px;
+  box-shadow: 2px 2px 20px var(--shadow);
+}
+
+.clock-column {
+  margin-right: 7rem;
+  text-align: center;
+}
+
+.clock-column:last-child {
+  margin-right: 0;
+}
+
+.clock-column::before {
+  content: '';
+  display: block;
+  height: .25rem;
+  width: .25rem;
+  border-radius: 3px;
+  background-color: var(--labelColor);
+  position: absolute;
+  top: 85px;
+  left: 160px;
+}
+
+.clock-column::after {
+  content: '';
+  display: block;
+  height: .25rem;
+  width: .25rem;
+  border-radius: 3px;
+  background-color: var(--labelColor);
+  position: absolute;
+  top: 100px;
+  left: 160px;
+}
+
+.clock-column:nth-child(2)::before {
+  content: '';
+  display: block;
+  height: .25rem;
+  width: .25rem;
+  border-radius: 3px;
+  background-color: var(--labelColor);
+  position: absolute;
+  top: 85px;
+  left: 286px;
+}
+
+.clock-column:nth-child(2)::after {
+  content: '';
+  display: block;
+  height: .25rem;
+  width: .25rem;
+  border-radius: 3px;
+  background-color: var(--labelColor);
+  position: absolute;
+  top: 100px;
+  left: 286px;
+}
+
+.clock-column:nth-child(3)::before {
+  content: '';
+  display: block;
+  height: .25rem;
+  width: .25rem;
+  border-radius: 3px;
+  background-color: var(--labelColor);
+  position: absolute;
+  top: 85px;
+  left: 419px;
+}
+
+.clock-column:nth-child(3)::after {
+  content: '';
+  display: block;
+  height: .25rem;
+  width: .25rem;
+  border-radius: 3px;
+  background-color: var(--labelColor);
+  position: absolute;
+  top: 100px;
+  left: 419px;
+}
+
+.clock-label {
+  padding-top: 2.2rem;
+  text-transform: uppercase;
+  color: var(--labelColor);
+  font-size: 1.25rem;
+}
+
+.clock-timer {
+  color: var(--textColor);
+  text-shadow: 0px 0px 20px var(--textColor) inset;
+  font-size: 3.25rem;
+}
+
+@media screen and (max-width: 700px) {
+  .container {
+    display: grid;
+    width: 22rem;
+    height: 45rem;
+  }
+
+  .clock-column {
+    width: 100%;
+  }
+
+  .clock-column:first-child {
+    padding-top: 2rem;
+  }
+
+  .clock-column:last-child {
+    padding-bottom: 2rem;
+  }
+
+  .clock-column::after,
+  .clock-column::before,
+  .clock-column:nth-child(2)::after,
+  .clock-column:nth-child(2)::before,
+  .clock-column:nth-child(3)::after,
+  .clock-column:nth-child(3)::before {
+    display: none;
+  }
+}
